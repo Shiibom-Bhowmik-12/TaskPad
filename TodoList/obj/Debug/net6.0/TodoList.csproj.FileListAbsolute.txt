@@ -21,3 +21,11 @@ C:\Shibom\C# Module Project\TodoList\bin\Debug\net6.0\NAudio.Core.dll
 C:\Shibom\C# Module Project\TodoList\bin\Debug\net6.0\NAudio.Midi.dll
 C:\Shibom\C# Module Project\TodoList\bin\Debug\net6.0\NAudio.Wasapi.dll
 C:\Shibom\C# Module Project\TodoList\bin\Debug\net6.0\NAudio.WinMM.dll
+C:\Shibom\C#-Module-Project\TodoList\obj\Debug\net6.0\TodoList.csproj.AssemblyReference.cache
+C:\Shibom\C#-Module-Project\TodoList\obj\Debug\net6.0\TodoList.GeneratedMSBuildEditorConfig.editorconfig
+C:\Shibom\C#-Module-Project\TodoList\obj\Debug\net6.0\TodoList.AssemblyInfoInputs.cache
+C:\Shibom\C#-Module-Project\TodoList\obj\Debug\net6.0\TodoList.AssemblyInfo.cs
+C:\Shibom\C#-Module-Project\TodoList\obj\Debug\net6.0\TodoList.csproj.CoreCompileInputs.cache
+C:\Shibom\C#-Module-Project\TodoList\obj\Debug\net6.0\TodoList.dll
+C:\Shibom\C#-Module-Project\TodoList\obj\Debug\net6.0\refint\TodoList.dll
+C:\Shibom\C#-Module-Project\TodoList\obj\Debug\net6.0\TodoList.pdb

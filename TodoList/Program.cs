@@ -123,12 +123,13 @@ namespace TodoList
 
                             Console.ResetColor();
 
-                            Console.Write("Enter task priority (High,Medium,Low): ");
+                            Console.Write("Enter task priority (1 - High,2 - Medium,3 - Low), give the input in integer : ");
                             string priority = Console.ReadLine();
-                            if (string.IsNullOrWhiteSpace(priority) || !(priority == "High" || priority == "high" || priority == "Medium" || priority == "medium" || priority == "Low" || priority == "low"))
+                            int opt;
+                            if (!Int32.TryParse(priority, out opt) || !(priority == "1" || priority == "2" || priority == "3"))
                             {
                                 Console.ForegroundColor = ConsoleColor.Red;
-                                throw new InvalidInputException("Priority cannot be empty and please enter any of these (High,Medium,Low)");
+                                throw new InvalidInputException("Priority cannot be string and please enter any of these (1 - High,2 - Medium,3 - Low)");
                             }
 
                             Console.ResetColor();

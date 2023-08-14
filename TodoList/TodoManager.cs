@@ -222,13 +222,13 @@ namespace TodoList
         //sort by priority high to low
         public void SortByPriorityHighToLow()
         {
-            tasks = tasks.OrderByDescending(t => t.Priority).ToList();
+            tasks = tasks.OrderBy(t => t.Priority).ToList();
         }
 
         //sort by priority low to high
         public void SortByPriorityLowToHigh()
         {
-            tasks = tasks.OrderBy(t => t.Priority).ToList();
+            tasks = tasks.OrderByDescending(t => t.Priority).ToList();
         }
 
         //sort by due date

@@ -14,7 +14,7 @@ namespace TodoList
 
         public bool IsComplete { get; set; }
 
-        public string Priority { get; set; }
+        public int Priority { get; set; }
 
         public DateTime DueDate { get; set; }
     }
