@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Shibom\\C#-Module-Project\\TodoList\\TodoList.csproj": {}
+    "C:\\Shibom\\Module Projects\\C#-Module-Project\\TodoList\\TodoList.csproj": {}
   },
   "projects": {
-    "C:\\Shibom\\C#-Module-Project\\TodoList\\TodoList.csproj": {
+    "C:\\Shibom\\Module Projects\\C#-Module-Project\\TodoList\\TodoList.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Shibom\\C#-Module-Project\\TodoList\\TodoList.csproj",
+        "projectUniqueName": "C:\\Shibom\\Module Projects\\C#-Module-Project\\TodoList\\TodoList.csproj",
         "projectName": "TodoList",
-        "projectPath": "C:\\Shibom\\C#-Module-Project\\TodoList\\TodoList.csproj",
+        "projectPath": "C:\\Shibom\\Module Projects\\C#-Module-Project\\TodoList\\TodoList.csproj",
         "packagesPath": "C:\\Users\\ShibomBhowmik\\.nuget\\packages\\",
-        "outputPath": "C:\\Shibom\\C#-Module-Project\\TodoList\\obj\\",
+        "outputPath": "C:\\Shibom\\Module Projects\\C#-Module-Project\\TodoList\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ShibomBhowmik\\AppData\\Roaming\\NuGet\\NuGet.Config",

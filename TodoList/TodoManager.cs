@@ -92,6 +92,17 @@ namespace TodoList
             Console.WriteLine(table);
             Console.ResetColor();
         }
+        
+
+        //Filter tasks by IsNotcomplete and display the table
+        public void FilterTasksByIsNotComplete(bool isComplete)
+        {
+            var filteredTasks = tasks.Where(t => t.IsComplete == isComplete).ToList();
+            string table = TablePrinter.DisplayTasksInTableFormat(filteredTasks);
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine(table);
+            Console.ResetColor();
+        }
 
         //Filter tasks by priority and display the table
         public void FilterTasksByPriority(int priority)

@@ -337,8 +337,23 @@ namespace TodoList
                             {
                                 Console.Write("Enter the new priority : ");
                                 int priority = Convert.ToInt32(Console.ReadLine());
-                                todoManager.UpdatePriority(id, priority);
-                                Console.WriteLine("Priority updated successfully!");
+                                while (true)
+                                {
+                                    if (priority >= 1 && priority <= 3)
+                                    {
+                                        todoManager.UpdatePriority(id, priority);
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine("Priority updated successfully!");
+                                        Console.ResetColor();
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.WriteLine("Priority should be between 1 to 3");
+                                        Console.ResetColor();
+                                    }
+                                }
                             }
                         }
                         if (choice == 2)
@@ -365,16 +380,23 @@ namespace TodoList
                                 {
                                     if (dueDate.Date < DateTime.Now.Date)
                                     {
+                                        Console.ForegroundColor = ConsoleColor.Red;
                                         Console.WriteLine("Error: Due date cannot be in the past. Task will not be saved.");
+                                        Console.ResetColor();
                                     }
                                     else
-                                    {
+                                    { 
                                         todoManager.UpdateDueDate(id, dueDate);
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine("Due date updated successfully!");
+                                        Console.ResetColor();
                                     }
                                 }
                                 else
                                 {
+                                    Console.ForegroundColor = ConsoleColor.Red;
                                     Console.WriteLine("Invalid date format. Task will not be saved.");
+                                    Console.ResetColor();
                                 }
                             }
                         }
@@ -393,14 +415,18 @@ namespace TodoList
 
                             if(id < 0 || id > todoManager.GetMaxId())
                             {
+                                Console.ForegroundColor = ConsoleColor.Red;
                                 Console.WriteLine("No task is present with this id");
+                                Console.ResetColor();
                             }
                             else
                             {
                                 Console.Write("Enter the new title : ");
                                 string title = Console.ReadLine();
                                 todoManager.UpdateTaskTitle(id, title);
+                                Console.ForegroundColor = ConsoleColor.Green;
                                 Console.WriteLine("Title updated successfully!");
+                                Console.ResetColor();
                             }
                         }
                         if (choice == 4)
@@ -427,7 +453,9 @@ namespace TodoList
                                 Console.Write("Enter the new description : ");
                                 string description = Console.ReadLine();
                                 todoManager.UpdateTaskDescription(id, description);
+                                Console.ForegroundColor = ConsoleColor.Green;
                                 Console.WriteLine("Description updated successfully!");
+                                Console.ResetColor();
                             }
                         }
                         if (choice == 5)
@@ -456,7 +484,9 @@ namespace TodoList
                                 if (Boolean.TryParse(Console.ReadLine(), out status))
                                 {
                                     todoManager.UpdateTaskStatus(id, status);
+                                    Console.ForegroundColor = ConsoleColor.Green;
                                     Console.WriteLine("Status updated successfully!");
+                                    Console.ResetColor();
                                 }
                                 else
                                 {
@@ -499,19 +529,25 @@ namespace TodoList
                         if (choice1 == 1)
                         {
                             todoManager.SortByPriorityHighToLow();
+                            Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine("Taskpad has been updated according to priority(High to Low)");
+                            Console.ResetColor();
                             todoManager.ViewAllTasks();
                         }
                         if (choice1 == 2)
                         {
                             todoManager.SortByPriorityLowToHigh();
+                            Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine("Taskpad has been updated according to priority(Low to High)");
+                            Console.ResetColor();
                             todoManager.ViewAllTasks();
                         }
                         if (choice1 == 3)
                         {
                             todoManager.SortByDueDate();
+                            Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine("Taskpad has been updated according to due date");
+                            Console.ResetColor();
                             todoManager.ViewAllTasks();
                         }
                         if (choice1 == 4)
@@ -523,7 +559,9 @@ namespace TodoList
                         if (choice1 == 5)
                         {
                             todoManager.SortByStatus();
+                            Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine("Taskpad has been updated according to due status");
+                            Console.ResetColor();
                             todoManager.ViewAllTasks();
                         }
 
@@ -556,26 +594,76 @@ namespace TodoList
                         {
                             if(choice3 == 1)
                             {
-                                Console.Write("Do you want to see completed tasks?[Y/N]");
+                                Console.WriteLine(" Press 1 - Do you want to see complete tasks? \nPress 2 - Do you want to see incomplete tasks?");
+                                Console.Write("Enter your choice : ");
                                 string inpt = Console.ReadLine();
-                                if(inpt == "Y" || inpt == "N" || inpt == "y" || inpt == "n")
+                                while(true)
                                 {
-                                    todoManager.FilterTasksByIsComplete(true);
-                                }
-                                else
-                                {
-                                    Console.ForegroundColor = ConsoleColor.Red;
-                                    Console.WriteLine("Please enter correct choice.");
-                                    Console.ResetColor();
+                                    if (inpt == "1")
+                                    {
+                                        todoManager.FilterTasksByIsComplete(true);
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine("The tasks has been filtered according to completed tasks!");
+                                        Console.ResetColor();
+                                        break;
+                                    }
+                                    else if (inpt == "2")
+                                    {
+                                        todoManager.FilterTasksByIsNotComplete(false);
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine("The tasks has been filtered according to incomplete tasks!");
+                                        Console.ResetColor();
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.WriteLine("Please enter correct choice.");
+                                        Console.ResetColor();
+                                    }
                                 }
                             }
+
+                            if(choice3 == 2)
+                            {
+                                Console.WriteLine("Press 1 - Do you want to see high priority tasks? \nPress 2 - Do you want see medium priority tasks? \nPress 3 - Do you want to see low priority tasks?");
+                                Console.Write("Enter your choice : ");
+                                string inpt = Console.ReadLine();
+                                while (true)
+                                {
+                                    if (inpt == "1")
+                                    {
+                                        todoManager.FilterTasksByPriority(1);
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine("The tasks has been filtered according to high priority tasks!");
+                                        Console.ResetColor();
+                                        break;
+                                    }
+                                    else if (inpt == "2")
+                                    {
+                                        todoManager.FilterTasksByPriority(2);
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine("The tasks has been filtered according to medium priority tasks!");
+                                        Console.ResetColor();
+                                        break;
+                                    }
+                                    else if (inpt == "3")
+                                    {
+                                        todoManager.FilterTasksByPriority(3);
+                                        Console.ForegroundColor = ConsoleColor.Green;
+                                        Console.WriteLine("The tasks has been filtered according to low priority tasks!");
+                                        Console.ResetColor();
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.WriteLine("Please enter correct choice.");
+                                        Console.ResetColor();
+                                    }
+                                }
+                            }   
                         }
-
-
-
-
-
-                        //Console.WriteLine("This is the future scope, this console section is under construction!");
                         break;
 
                     case "9":
@@ -599,11 +687,15 @@ namespace TodoList
             }
         }
 
+
+
+
+
         static async void PlayWelcomeAudio()
         {
             try
             {
-                using (var audioFile = new AudioFileReader(@"C:\Shibom\C#-Module-Project\TodoList\welcome.mp3"))
+                using (var audioFile = new AudioFileReader(@"C:\Shibom\Module Projects\C#-Module-Project\TodoList\welcome.mp3"))
                 using (var outputDevice = new WaveOutEvent())
                 {
                     outputDevice.Init(audioFile);
@@ -622,11 +714,14 @@ namespace TodoList
             }
         }
 
+
+
+
         static void PlayExitAudio()
         {
             try
             {
-                using (var audioFile = new AudioFileReader(@"C:\Shibom\C#-Module-Project\TodoList\exit.mp3"))
+                using (var audioFile = new AudioFileReader(@"C:\Shibom\Module Projects\C#-Module-Project\TodoList\exit.mp3"))
                 using (var outputDevice = new WaveOutEvent())
                 {
                     outputDevice.Init(audioFile);
@@ -645,11 +740,16 @@ namespace TodoList
             }
         }
 
+
+
+
         static void ClearConsole()
         {
             Console.Clear();
             Console.SetCursorPosition(0, 0);
         }
+
+
 
         static void CenterText(string text)
         {
@@ -669,13 +769,6 @@ namespace TodoList
                 startY++;
             }
         }
-
-        //static string SearchTask(string query)
-        //{
-        //    List<TaskItem> tasks = TodoManager.GetTasks();
-        //}
-
-
     }
 
 
