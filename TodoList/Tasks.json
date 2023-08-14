@@ -4,39 +4,23 @@
     "Title": "Task 1",
     "Description": "Description 1",
     "IsComplete": false,
-    "Priority": "Low",
+    "Priority": 3,
     "DueDate": "2024-01-01T00:00:00"
   },
   {
+    "Id": 2,
+    "Title": "Gym",
+    "Description": "ten pushups",
+    "IsComplete": true,
+    "Priority": 1,
+    "DueDate": "2023-09-28T00:00:00"
+  },
+  {
     "Id": 3,
-    "Title": "task 3",
-    "Description": "desp3",
+    "Title": "new ",
+    "Description": "test",
     "IsComplete": false,
-    "Priority": "Medium",
-    "DueDate": "2023-10-04T00:00:00"
-  },
-  {
-    "Id": 4,
-    "Title": "task4",
-    "Description": "desp4",
-    "IsComplete": true,
-    "Priority": "Low",
-    "DueDate": "2023-11-23T00:00:00"
-  },
-  {
-    "Id": 5,
-    "Title": "Eat",
-    "Description": "Do workout",
-    "IsComplete": true,
-    "Priority": "High",
-    "DueDate": "2023-10-22T00:00:00"
-  },
-  {
-    "Id": 6,
-    "Title": "new",
-    "Description": "testing",
-    "IsComplete": true,
-    "Priority": "low",
-    "DueDate": "2023-10-10T00:00:00"
+    "Priority": 2,
+    "DueDate": "2023-11-29T00:00:00"
   }
 ]

@@ -145,7 +145,7 @@ namespace TodoList
                                 }
                                 else
                                 {
-                                    todoManager.AddTask(title, description, priority, dueDate);
+                                    todoManager.AddTask(title, description, opt, dueDate);
                                     Console.WriteLine("Your task has been added successfully!");
                                 }
                             }
@@ -336,7 +336,7 @@ namespace TodoList
                             else
                             {
                                 Console.Write("Enter the new priority : ");
-                                string priority = Console.ReadLine();
+                                int priority = Convert.ToInt32(Console.ReadLine());
                                 todoManager.UpdatePriority(id, priority);
                                 Console.WriteLine("Priority updated successfully!");
                             }
@@ -603,7 +603,7 @@ namespace TodoList
         {
             try
             {
-                using (var audioFile = new AudioFileReader(@"C:\Shibom\C# Module Project\TodoList\welcome.mp3"))
+                using (var audioFile = new AudioFileReader(@"C:\Shibom\C#-Module-Project\TodoList\welcome.mp3"))
                 using (var outputDevice = new WaveOutEvent())
                 {
                     outputDevice.Init(audioFile);
@@ -626,7 +626,7 @@ namespace TodoList
         {
             try
             {
-                using (var audioFile = new AudioFileReader(@"C:\Shibom\C# Module Project\TodoList\exit.mp3"))
+                using (var audioFile = new AudioFileReader(@"C:\Shibom\C#-Module-Project\TodoList\exit.mp3"))
                 using (var outputDevice = new WaveOutEvent())
                 {
                     outputDevice.Init(audioFile);

@@ -60,7 +60,7 @@ namespace TodoList
                     task.Title,
                     task.Description,
                     task.IsComplete.ToString(),
-                    task.Priority,
+                    task.Priority.ToString(),
                     task.DueDate.ToString("yyyy-MM-dd HH:mm:ss") // Format the DueDate as desired
                 };
                 table.Add(rowData);

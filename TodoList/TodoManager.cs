@@ -26,7 +26,7 @@ namespace TodoList
             tasks = loadedTasks;
         }
 
-        public void AddTask(string title,string description, string priority, DateTime duedate)
+        public void AddTask(string title,string description, int priority, DateTime duedate)
         { 
             var maxId = tasks.Max(t => t.Id);
             TaskItem task = new TaskItem()
@@ -94,7 +94,7 @@ namespace TodoList
         }
 
         //Filter tasks by priority and display the table
-        public void FilterTasksByPriority(string priority)
+        public void FilterTasksByPriority(int priority)
         {
             var filteredTasks = tasks.Where(t => t.Priority == priority).ToList();
             string table = TablePrinter.DisplayTasksInTableFormat(filteredTasks);
@@ -150,7 +150,7 @@ namespace TodoList
         }
 
         //update priority
-        public void UpdatePriority(int taskId, string priority)
+        public void UpdatePriority(int taskId, int priority)
         {
             var task = tasks.FirstOrDefault(t => t.Id == taskId);
             if(task != null)

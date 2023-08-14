@@ -11,7 +11,7 @@ namespace TodoList
 {
     public class FileHandler
     {
-        private const string FileName = @"C:\Shibom\C# Module Project\TodoList\Tasks.json";
+        private const string FileName = @"C:\Shibom\C#-Module-Project\TodoList\Tasks.json";
 
         // Save tasks to file
         public void SaveToFile(List<TaskItem> tasks)
@@ -49,7 +49,7 @@ namespace TodoList
                         task.Title = (string)jObject["Title"];
                         task.Description = (string)jObject["Description"];
                         task.IsComplete = (bool)jObject["IsComplete"];
-                        task.Priority = (string)jObject["Priority"];
+                        task.Priority = (int)jObject["Priority"];
                         task.DueDate = (DateTime)jObject["DueDate"];
                         tasks.Add(task);
                     }
