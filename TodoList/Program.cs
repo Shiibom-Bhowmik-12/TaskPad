@@ -125,8 +125,7 @@ namespace TodoList
 
                             Console.Write("Enter task priority (1 - High,2 - Medium,3 - Low), give the input in integer : ");
                             string priority = Console.ReadLine();
-                            int opt;
-                            if (!Int32.TryParse(priority, out opt) || !(priority == "1" || priority == "2" || priority == "3"))
+                            if (!(priority == "1" || priority == "2" || priority == "3"))
                             {
                                 Console.ForegroundColor = ConsoleColor.Red;
                                 throw new InvalidInputException("Priority cannot be string and please enter any of these (1 - High,2 - Medium,3 - Low)");
@@ -145,7 +144,8 @@ namespace TodoList
                                 }
                                 else
                                 {
-                                    todoManager.AddTask(title, description, opt, dueDate);
+                                    int priorityNumber = int.Parse(priority);
+                                    todoManager.AddTask(title, description, priorityNumber , dueDate);
                                     Console.WriteLine("Your task has been added successfully!");
                                 }
                             }
@@ -594,11 +594,11 @@ namespace TodoList
                         {
                             if(choice3 == 1)
                             {
-                                Console.WriteLine(" Press 1 - Do you want to see complete tasks? \nPress 2 - Do you want to see incomplete tasks?");
-                                Console.Write("Enter your choice : ");
-                                string inpt = Console.ReadLine();
+                                Console.WriteLine("Press 1 - Do you want to see complete tasks? \nPress 2 - Do you want to see incomplete tasks?");
                                 while(true)
                                 {
+                                    Console.Write("Enter your choice : ");
+                                    string inpt = Console.ReadLine();
                                     if (inpt == "1")
                                     {
                                         todoManager.FilterTasksByIsComplete(true);
@@ -627,10 +627,10 @@ namespace TodoList
                             if(choice3 == 2)
                             {
                                 Console.WriteLine("Press 1 - Do you want to see high priority tasks? \nPress 2 - Do you want see medium priority tasks? \nPress 3 - Do you want to see low priority tasks?");
-                                Console.Write("Enter your choice : ");
-                                string inpt = Console.ReadLine();
                                 while (true)
                                 {
+                                    Console.Write("Enter your choice : ");
+                                    string inpt = Console.ReadLine();
                                     if (inpt == "1")
                                     {
                                         todoManager.FilterTasksByPriority(1);
